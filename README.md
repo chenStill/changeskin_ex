@@ -24,7 +24,7 @@
 ### 在Activity中的onCreate方法注册
  SkinManager.getInstance().register(this);
 ### 在Activity中的onDestroy方法销毁
-  SkinManager.getInstance().unregister(this);
+  SkinManager.getInstance().unregister(this);  
    注：也可以写在BaseActivity中统一注册和引用
    
 ## Step.3 使用
