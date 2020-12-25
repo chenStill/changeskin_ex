@@ -29,7 +29,7 @@
    
 ## Step.3 使用
  ### 在需要换肤的控件的xml中
- 、、
+  ``
   android:tag="skin:color_theme:textColor"
 
  ```  
