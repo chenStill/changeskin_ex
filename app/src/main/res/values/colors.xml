@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#03A9F4</color>
+    <color name="colorPrimaryDark">#FFEB3B</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="white">#ffffffff</color>
+    <color name="yello">#FFEB3B</color>
+    <color name="balck">#ff000000</color>
+
+    <color name="colorPrimary_red">#A700EE</color>
+    <color name="colorPrimaryDark_red">#B3003F</color>
+    <color name="colorAccent_red">#DA2303</color>
+
+    <color name="colorPrimary_str">#590BE4</color>
+    <color name="colorPrimary_end">#FFC107</color>
+    <color name="colorPrimary_str_red">#E42113</color>
+    <color name="colorPrimary_end_red">#09DDF8</color>
+
+    <color name="colorPrimary_set_1">#590BE4</color>
+    <color name="colorPrimary_set_2">#FFC107</color>
+    <color name="colorPrimary_set_1_red">#E42113</color>
+    <color name="colorPrimary_set_2_red">#09DDF8</color>
+
+    <color name="balck_set_1">#590BE4</color>
+    <color name="balck_set_2">#FFC107</color>
+    <color name="balck_set_1_red">#E42113</color>
+    <color name="balck_set_2_red">#09DDF8</color>
+</resources>

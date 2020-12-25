@@ -1,0 +1,3 @@
+include ':changeskin'
+include ':app'
+rootProject.name = "changeskin_ex"
