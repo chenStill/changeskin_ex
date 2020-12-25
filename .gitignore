@@ -140,3 +140,4 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 >>>>>>> 4d9ec8a974617a240dea2005c859ddc3727877bf
+/gradle/
