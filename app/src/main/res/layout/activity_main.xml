@@ -87,7 +87,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
 
@@ -117,6 +117,8 @@
 
 
             </LinearLayout>
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -184,6 +186,16 @@
             </LinearLayout>
 
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="=============选择器选中状态是空心的============="
+                android:textColor="#000000" />
+
             <LinearLayout
                 android:id="@+id/ll"
                 android:layout_width="match_parent"
@@ -200,7 +212,7 @@
 
                     android:background="@drawable/selector_bg"
                     android:gravity="center"
-                    android:tag="skin:colorPrimary:SelectorColor_s"
+                    android:tag="skin:colorPrimary:SelectorColor"
                     android:text="带selector的换肤"
                     android:textColor="@drawable/selector_txt_clr" />
 
@@ -212,7 +224,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/selector_bg"
                     android:gravity="center"
-                    android:tag="skin:colorPrimary:SelectorColor_s"
+                    android:tag="skin:colorPrimary:SelectorColor"
                     android:text="selector的换肤"
                     android:textColor="@drawable/selector_txt_clr" />
 
@@ -224,7 +236,62 @@
                     android:layout_weight="1"
                     android:background="@drawable/selector_bg"
                     android:gravity="center"
-                    android:tag="skin:colorPrimary:SelectorColor_s"
+                    android:tag="skin:colorPrimary:SelectorColor"
+                    android:text="selector的换肤"
+                    android:textColor="@drawable/selector_txt_clr" />
+
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="=============选择器选中状态是实心的============="
+                android:textColor="#000000" />
+            <LinearLayout
+                android:id="@+id/l2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+
+                    android:background="@drawable/selector_bg"
+                    android:gravity="center"
+                    android:tag="skin:colorPrimary:SelectorColor"
+                    android:text="带selector的换肤"
+                    android:textColor="@drawable/selector_txt_clr" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_bg"
+                    android:gravity="center"
+                    android:tag="skin:colorPrimary:SelectorColor"
+                    android:text="selector的换肤"
+                    android:textColor="@drawable/selector_txt_clr" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_bg"
+                    android:gravity="center"
+                    android:tag="skin:colorPrimary:SelectorColor"
                     android:text="selector的换肤"
                     android:textColor="@drawable/selector_txt_clr" />
 
@@ -239,7 +306,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:background="@color/colorPrimaryDark"
+                android:background="@color/colorPrimary"
+                android:tag="skin:colorPrimary:background_c"
                 android:onClick="changeskin"
                 android:padding="20dp"
                 android:text="一键换肤"

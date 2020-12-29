@@ -60,6 +60,7 @@ public enum SkinAttrType {
 
         }
     }, DIVIDER("divider") {
+        //更换ListView里的divider颜色
         @Override
         public void apply(View view, String resName) {
             if (view instanceof ListView) {
@@ -70,30 +71,51 @@ public enum SkinAttrType {
         }
     }, // android:tag="skin:color_theme:ImageViewColor"
     IMAGEVIEW_COLOR("ImageViewColor") {
+        //更换Vector里面的颜色
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
             Drawable drawable = view.getBackground();
-            // int color = getResourceManager().getColor(resName);
             int color = getResourceManager().getColor(resName);
             if (drawable != null) {
-                //drawable.setTint(Color.parseColor("#FFEB3B"));
                 drawable.setTint(color);
-                //   view.setImageDrawable(drawable);
                 ((ImageView) view).setImageDrawable(drawable);
                 // view.setBackground(drawable);
             }
         }
+    }, // android:tag="skin:color_theme:SelectorColor"
+    BACKGROUND_D("background_d") {
+        @Override
+        public void apply(View view, String resName) {
+            Drawable drawable = getResourceManager().getDrawableByName(resName);
+            if (drawable != null) {
+                view.setBackgroundDrawable(drawable);
+            }
+        }
+
     },
     // android:tag="skin:color_theme:SelectorColor"
-    SELECTOR_COLOR_S("SelectorColor_s") {
-        //为true的时候更换Shpae里面的
+    BACKGROUND_C("background_c") {
+        @Override
+        public void apply(View view, String resName) {
+            try {
+                int color = getResourceManager().getColor(resName);
+                view.setBackgroundColor(color);
+            } catch (Resources.NotFoundException ex) {
+                ex.printStackTrace();
+            }
+        }
+    },
+    // android:tag="skin:color_theme:SelectorColor"
+    SELECTOR_COLOR("SelectorColor") {
+        //更换SelectorColor里面的字体和背景色
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
 
 
             int defaultColor = Color.parseColor("#ffffff");
+            //默认的底色是白色
             //int changeColor = getResourceManager().getColor(resName + "_set_2");
             int changeColor = getResourceManager().getColor(resName + "_set_1");
             ColorStateList textColors = ((TextView) view).getTextColors();
@@ -112,8 +134,7 @@ public enum SkinAttrType {
             }
 
             Log.d("textColors", s);
-            Log.d("textColors", s1 + " " + i1);
-            Log.d("textColors", s2 + " " + i2);
+
             if (textColors != null) {
                 ColorStateList textColors2 = new ColorStateList(new int[][]{new int[]{i1}, new int[]{i2}}
                         , new int[]{changeColor, defaultColor});
@@ -138,69 +159,10 @@ public enum SkinAttrType {
                 view.setBackgroundDrawable(stateListDrawable2);
             }
         }
-    },    // android:tag="skin:color_theme:SelectorColor"  // android:tag="skin:color_theme:SelectorColor"
-    SELECTOR_COLOR_S1("SelectorColor_s1") {
-        //为true的时候更换Shpae里面的
-        @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-        @Override
-        public void apply(View view, String resName) {
-
-
-            int color = getResourceManager().getColor(resName + "_set_2");
-            ColorStateList textColors = ((TextView) view).getTextColors();
-            String s = textColors.toString();
-            int beginIndex = s.indexOf("mStateSpecs=[[");
-            String s1 = s.substring(beginIndex + 14, s.indexOf("], ["));
-            int beginIndex1 = s.indexOf("], [");
-            String s2 = s.substring(beginIndex1 + 4, s.indexOf("]]mColors"));
-            int i1 = -android.R.attr.state_selected;
-            //默认
-            int i2 = android.R.attr.state_selected;
-
-            try {
-                i1 = Integer.parseInt(s1);
-                i2 = Integer.parseInt(s2);
-            } catch (Exception e) {
-            }
-
-            Log.d("textColors", s);
-            Log.d("textColors", s1 + " " + i1);
-            Log.d("textColors", s2 + " " + i2);
-           // int defaultColor = textColors.getDefaultColor();
-            int defaultColor = Color.parseColor("#ffffff");
-            if (textColors != null) {
-                ColorStateList textColors2 = new ColorStateList(new int[][]{new int[]{i1}, new int[]{i2}}
-                        , new int[]{color, defaultColor});
-
-                ((TextView) view).setTextColor(textColors2);
-            }
-
-
-            int color2 = getResourceManager().getColor(resName + "_set_2");
-            StateListDrawable stateListDrawable = (StateListDrawable) view.getBackground();
-            if (stateListDrawable != null) {
-                StateListDrawable stateListDrawable2 = new StateListDrawable();
-                for (int i = 0; i < stateListDrawable.getStateCount(); i++) {
-                    GradientDrawable drawable1 = (GradientDrawable) stateListDrawable.getStateDrawable(i);
-                    if (i == 0) {
-                        drawable1.setStroke(2, color2);
-                        drawable1.setColor(Color.parseColor("#ffffff"));
-                       // ((TextView) view).setTextColor(color2);
-                    } else {
-                        drawable1.setColor(color2);
-                        drawable1.setStroke(0, null);
-                       // ((TextView) view).setTextColor(Color.parseColor("#FFFFFF"));
-                    }
-                    int[] stateSet = stateListDrawable.getStateSet(i);
-                    stateListDrawable2.addState(stateSet, drawable1);
-                }
-                view.setBackgroundDrawable(stateListDrawable2);
-            }
-        }
-    },    // android:tag="skin:color_theme:SelectorColor"
+    },
     // android:tag="skin:color_theme:SelectortextColor"
     SELECTOR_TEXT_COLOR_N("SelectortextColor") {
-        //为false的时候换肤
+        //为false的时候换字体的颜色
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
@@ -224,8 +186,6 @@ public enum SkinAttrType {
             }
 
             Log.d("textColors", s);
-            Log.d("textColors", s1 + " " + i1);
-            Log.d("textColors", s2 + " " + i2);
             int defaultColor = textColors.getDefaultColor();
             if (textColors != null) {
                 ColorStateList textColors2 = new ColorStateList(new int[][]{new int[]{i1}, new int[]{i2}}
@@ -237,6 +197,7 @@ public enum SkinAttrType {
     },
     // android:tag="skin:color_theme:shapeSolidColor"
     SHAPE_SOLID_COLOR("shapeSolidColor") {
+        //单独更换shapeSolidColor的颜色
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
@@ -251,6 +212,7 @@ public enum SkinAttrType {
     },
     // android:tag="skin:color_theme,4:shapeStrokeColor"
     SHAPE_STROKE_COLOR("shapeStrokeColor") {
+        //单独更换shape 线框的颜色
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
@@ -263,8 +225,9 @@ public enum SkinAttrType {
             }
         }
     },
-    // android:tag="skin:color_theme,4:shapeStrokeColor"
-    SHAPE_STROKE_FONTCOLOR_s("shapeStrokeColorFONT_S") {
+    // android:tag="skin:color_theme,4:shapeStrokeColorFONT"
+    SHAPE_STROKE_FONTCOLOR("shapeStrokeColorFONT") {
+        //单独更换shape 线框和字体的颜色
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
@@ -277,24 +240,9 @@ public enum SkinAttrType {
                 view.setBackground(drawable);
             }
         }
-    },  // android:tag="skin:color_theme,4:shapeStrokeColor"
-    SHAPE_STROKE_FONTCOLOR_N("shapeStrokeColorFONT_N") {
-        @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-        @Override
-        public void apply(View view, String resName) {
-            GradientDrawable drawable = (GradientDrawable) view.getBackground();
-            if (drawable != null) {
-                int color1 = Color.parseColor("#FFFFFFFF");
-                int color = getResourceManager().getColor(resName);
-                // view.setBackgroundColor(color1);
-                drawable.setColor(color);
-                ((TextView) view).setTextColor(color1);
-                drawable.setStroke(2, color1);
-                view.setBackground(drawable);
-            }
-        }
-    },   // android:tag="skin:color_theme:shapeSolidColor"
+    },   // android:tag="skin:color_theme:shapeGradientColor"
     SHAPE_GRADIENT_COLOR("shapeGradientColor") {
+        //单独更换渐变的颜色
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
@@ -309,8 +257,9 @@ public enum SkinAttrType {
             }
         }
     },
-    // android:tag="skin:color_theme,4:shapeStrokeColor"
+    // android:tag="skin:color_theme,4:shapeGradientStrokeColor"
     SHAPE_GRADIENT_STROKE_COLOR("shapeGradientStrokeColor") {
+        //单独更换渐变的颜色有边框
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
@@ -323,8 +272,9 @@ public enum SkinAttrType {
             }
         }
     },
-    // android:tag="skin:color_theme,4:shapeStrokeColor"
+    // android:tag="skin:color_theme,4:shapeeGradientColorFONT_S"
     SHAPE_GEGRADIENT_FONTCOLOR_s("shapeeGradientColorFONT_S") {
+        //单独更换渐变的边框 和字体颜色
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {

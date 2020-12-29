@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         setSelctTv((LinearLayout) findViewById(R.id.ll_3));
         setSelctTv((LinearLayout) findViewById(R.id.ll));
+        setSelctTv2((LinearLayout) findViewById(R.id.l2));
 
 
 
@@ -30,20 +31,46 @@ public class MainActivity extends AppCompatActivity {
         final int childCount = ll.getChildCount();
         for (int i = 0; i < childCount; i++) {
             final int finalI = i;
-            ll.getChildAt(0).setSelected(true);
+            if (i==0) {
+                ll.getChildAt(i).setSelected(true);
+            }else {
+                ll.getChildAt(i).setSelected(false);
+            }
 
             ll.getChildAt(i).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    for (int i1 = 0; i1 < childCount; i1++) {
-                        if (i1 == finalI) {
-                            ll.getChildAt(i1).setSelected(true);
-                        } else {
-                            ll.getChildAt(i1).setSelected(false);
-                        }
-                    }
+                    setSelectView(childCount, finalI, ll, true, false);
                 }
             });
+        }
+    }
+    private void setSelctTv2(final LinearLayout ll) {
+        final int childCount = ll.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            final int finalI = i;
+            if (i==0) {
+            ll.getChildAt(i).setSelected(false);
+            }else {
+            ll.getChildAt(i).setSelected(true);
+            }
+
+            ll.getChildAt(i).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    setSelectView(childCount, finalI, ll, false, true);
+                }
+            });
+        }
+    }
+
+    private void setSelectView(int childCount, int finalI, LinearLayout ll, boolean b, boolean b2) {
+        for (int i1 = 0; i1 < childCount; i1++) {
+            if (i1 == finalI) {
+                ll.getChildAt(i1).setSelected(b);
+            } else {
+                ll.getChildAt(i1).setSelected(b2);
+            }
         }
     }
 
