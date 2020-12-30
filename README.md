@@ -3,15 +3,17 @@
 这是基于鸿洋大神的换肤框架的扩展库和使用说明  
 在原有的基础上添加了Shape 资源文件的换肤  
 添加了   
- 1.图片Vector资源换肤  
- 2.选择器Selector换肤  
- 3.字体颜色选择器Selector换肤  
- 4.资源Shape文件里的换肤（只换内容，只换框，换框和字体）  
- 5.资源shapeGradient渐变的换肤（只换渐变，只换框，换框和字体的颜色）  
+ ###### 1.图片Vector资源换肤  
+ ###### 2.选择器Selector换肤  
+ ###### 3.字体颜色选择器Selector换肤  
+ ###### 4.资源Shape文件里的换肤（只换内容，只换框，换框和字体）  
+ ###### 5.资源shapeGradient渐变的换肤（只换渐变，只换框，换框和字体的颜色）  
 
 ===
+话不多说上才艺 ShowTime!!!
+![换肤效果图](https://github.com/hkdoke/changeskin_ex/blob/master/raw/bg.jpg)
 ## Step.1 引用jar包
- ### 在项目的根目录下的build.gradle 添加jitpack
+ ##### 在项目的根目录下的build.gradle 添加jitpack
   ```  
  repositories {
         maven { url "https://jitpack.io" }
@@ -27,16 +29,16 @@
 ```  
 
 ## Step.2 初始化
-### 在Application中onCreate的方法初始化控件
+##### 在Application中onCreate的方法初始化控件
   SkinManager.getInstance().init(this);
-### 在Activity中的onCreate方法注册
+##### 在Activity中的onCreate方法注册
  SkinManager.getInstance().register(this);
-### 在Activity中的onDestroy方法销毁
+##### 在Activity中的onDestroy方法销毁
   SkinManager.getInstance().unregister(this);  
    注：也可以写在BaseActivity中统一注册和引用
    
 ## Step.3 使用
- ### 在需要换肤的控件的xml中
+ ##### 在需要换肤的控件的xml中
   android:tag="skin:color_theme:textColor"
 
  ```  
