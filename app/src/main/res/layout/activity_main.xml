@@ -43,7 +43,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/btn_sp_bg_stroke"
                     android:gravity="center"
-                    android:tag="skin:colorPrimaryDark:shapeStrokeColor"
+                    android:tag="skin:colorAccent:shapeStrokeColor"
                     android:text="单换shape的StrokeColor"
                     android:textColor="#000000" />
 
@@ -64,7 +64,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/btn_sp_bg"
                     android:gravity="center"
-                    android:tag="skin:colorPrimary:shapeStrokeColorFONT_S"
+                    android:tag="skin:colorPrimary:shapeStrokeColorFONT"
                     android:text="换Shape边框和字体的颜色"
                     android:textColor="@color/colorPrimary" />
 

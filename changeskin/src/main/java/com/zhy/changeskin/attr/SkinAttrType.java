@@ -60,7 +60,6 @@ public enum SkinAttrType {
 
         }
     }, DIVIDER("divider") {
-        //更换ListView里的divider颜色
         @Override
         public void apply(View view, String resName) {
             if (view instanceof ListView) {
@@ -70,8 +69,8 @@ public enum SkinAttrType {
             }
         }
     }, // android:tag="skin:color_theme:ImageViewColor"
-    IMAGEVIEW_COLOR("ImageViewColor") {
         //更换Vector里面的颜色
+    IMAGEVIEW_COLOR("ImageViewColor") {
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
@@ -107,8 +106,8 @@ public enum SkinAttrType {
         }
     },
     // android:tag="skin:color_theme:SelectorColor"
-    SELECTOR_COLOR("SelectorColor") {
         //更换SelectorColor里面的字体和背景色
+    SELECTOR_COLOR("SelectorColor") {
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
@@ -161,8 +160,8 @@ public enum SkinAttrType {
         }
     },
     // android:tag="skin:color_theme:SelectortextColor"
-    SELECTOR_TEXT_COLOR_N("SelectortextColor") {
         //为false的时候换字体的颜色
+    SELECTOR_TEXT_COLOR_N("SelectortextColor") {
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
@@ -190,14 +189,13 @@ public enum SkinAttrType {
             if (textColors != null) {
                 ColorStateList textColors2 = new ColorStateList(new int[][]{new int[]{i1}, new int[]{i2}}
                         , new int[]{defaultColor, color});
-
                 ((TextView) view).setTextColor(textColors2);
             }
         }
     },
     // android:tag="skin:color_theme:shapeSolidColor"
-    SHAPE_SOLID_COLOR("shapeSolidColor") {
         //单独更换shapeSolidColor的颜色
+    SHAPE_SOLID_COLOR("shapeSolidColor") {
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
@@ -211,8 +209,8 @@ public enum SkinAttrType {
         }
     },
     // android:tag="skin:color_theme,4:shapeStrokeColor"
-    SHAPE_STROKE_COLOR("shapeStrokeColor") {
         //单独更换shape 线框的颜色
+    SHAPE_STROKE_COLOR("shapeStrokeColor") {
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
@@ -226,23 +224,22 @@ public enum SkinAttrType {
         }
     },
     // android:tag="skin:color_theme,4:shapeStrokeColorFONT"
-    SHAPE_STROKE_FONTCOLOR("shapeStrokeColorFONT") {
         //单独更换shape 线框和字体的颜色
+    SHAPE_STROKE_FONTCOLOR("shapeStrokeColorFONT") {
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
             GradientDrawable drawable = (GradientDrawable) view.getBackground();
             if (drawable != null) {
                 int color = getResourceManager().getColor(resName);
-                // view.setBackgroundColor(color);
                 ((TextView) view).setTextColor(color);
                 drawable.setStroke(1, color);
                 view.setBackground(drawable);
             }
         }
     },   // android:tag="skin:color_theme:shapeGradientColor"
-    SHAPE_GRADIENT_COLOR("shapeGradientColor") {
         //单独更换渐变的颜色
+    SHAPE_GRADIENT_COLOR("shapeGradientColor") {
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
@@ -258,8 +255,8 @@ public enum SkinAttrType {
         }
     },
     // android:tag="skin:color_theme,4:shapeGradientStrokeColor"
-    SHAPE_GRADIENT_STROKE_COLOR("shapeGradientStrokeColor") {
         //单独更换渐变的颜色有边框
+    SHAPE_GRADIENT_STROKE_COLOR("shapeGradientStrokeColor") {
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
@@ -273,15 +270,14 @@ public enum SkinAttrType {
         }
     },
     // android:tag="skin:color_theme,4:shapeeGradientColorFONT_S"
-    SHAPE_GEGRADIENT_FONTCOLOR_s("shapeeGradientColorFONT_S") {
         //单独更换渐变的边框 和字体颜色
+    SHAPE_GEGRADIENT_FONTCOLOR_s("shapeeGradientColorFONT_S") {
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
             GradientDrawable drawable = (GradientDrawable) view.getBackground();
             if (drawable != null) {
                 int color = getResourceManager().getColor(resName);
-                // view.setBackgroundColor(color);
                 ((TextView) view).setTextColor(color);
                 drawable.setStroke(1, color);
                 view.setBackground(drawable);
