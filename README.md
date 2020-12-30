@@ -66,5 +66,8 @@
         }
     }  
  ```  
- # 鸿洋大神项目原地址
- [Changeskin]https://github.com/hongyangAndroid/ChangeSkin)
+ # 灰常感谢鸿洋大神！！！ 
+ 希望大家有能力的给大神的玩安卓赞助下哈，三毛两毛都是爱，十块五块都可爱。
+ [玩安卓]https://www.wanandroid.com/index
+ 鸿洋大神项目原地址
+ [Changeskin]https://github.com/hongyangAndroid/ChangeSkin
