@@ -54,9 +54,9 @@
         android:tag="skin:color_theme:textColor"
       />
  ```  
-在colors中需要添加换肤后的颜色
-  <color name="color_theme">#03DAC5</color>
-  <color name="color_theme_red">#DA032E</color>      
+在colors中需要添加换肤后的颜色  
+  \<color name="color_theme">\#03DAC5\</color>  
+  \<color name="color_theme_red">\#DA032E\</color>      
 
 ## 最后一键换肤
  ```  
