@@ -11,7 +11,10 @@
 
 ===
 话不多说上才艺 ShowTime!!!
-![换肤效果图](https://github.com/hkdoke/changeskin_ex/blob/master/raw/bg.jpg)
+![换肤效果图](https://github.com/hkdoke/changeskin_ex/blob/master/raw/bg.jpg) 
+搞错了，再来  
+![换肤效果图2](https://github.com/hkdoke/changeskin_ex/blob/master/raw/bg_2.png)  
+
 ## Step.1 引用jar包
  ##### 在项目的根目录下的build.gradle 添加jitpack
   ```  
