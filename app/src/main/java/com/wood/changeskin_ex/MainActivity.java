@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.utils.library.StatusBarUtil;
 import com.zhy.changeskin.SkinManager;
 
 import java.security.PublicKey;
@@ -16,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        StatusBarUtil.immersive(this);
+        StatusBarUtil.setPaddingSmart(this, findViewById(R.id.ll_root));
         SkinManager.getInstance().register(this);
 
         setSelctTv((LinearLayout) findViewById(R.id.ll_3));
@@ -77,13 +80,20 @@ public class MainActivity extends AppCompatActivity {
     public void  changeskin(View view){
         if (isChange) {
             isChange=false;
-        SkinManager.getInstance().changeSkin("red");
+        SkinManager.getInstance().changeSkin("test");
         }else {
             isChange=true;
         SkinManager.getInstance().changeSkin("");
 
         }
 
+    }
+
+    public void  changeskin_dark(View view){
+        SkinManager.getInstance().changeSkin("dark");
+    }
+    public void  changeskin_red(View view){
+        SkinManager.getInstance().changeSkin("red");
     }
 
     @Override

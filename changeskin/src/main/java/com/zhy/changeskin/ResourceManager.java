@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 
+import com.zhy.changeskin.attr.SkinAttrType;
 import com.zhy.changeskin.utils.L;
 
 /**
@@ -62,7 +63,14 @@ public Drawable getDrawable(String name)
     {
         name = appendSuffix(name);
         L.e("name = " + name);
-        return mResources.getColor(mResources.getIdentifier(name, DEFTYPE_COLOR, mPluginPackageName));
+
+        int identifier = mResources.getIdentifier(name, DEFTYPE_COLOR, mPluginPackageName);
+
+        int color= SkinAttrType.sInt;
+        try {
+         color = mResources.getColor(identifier);
+        }catch (Exception e){}
+        return color;
     }
 
     public ColorStateList getColorStateList(String name)

@@ -36,6 +36,7 @@ public enum SkinAttrType {
             } else {
                 try {
                     int color = getResourceManager().getColor(resName);
+                    if (sInt ==color) { return;}
                     view.setBackgroundColor(color);
                 } catch (Resources.NotFoundException ex) {
                     ex.printStackTrace();
@@ -77,6 +78,7 @@ public enum SkinAttrType {
             Drawable drawable = view.getBackground();
             int color = getResourceManager().getColor(resName);
             if (drawable != null) {
+                if (sInt ==color) { return;}
                 drawable.setTint(color);
                 ((ImageView) view).setImageDrawable(drawable);
                 // view.setBackground(drawable);
@@ -99,6 +101,7 @@ public enum SkinAttrType {
         public void apply(View view, String resName) {
             try {
                 int color = getResourceManager().getColor(resName);
+                if (sInt ==color) { return;}
                 view.setBackgroundColor(color);
             } catch (Resources.NotFoundException ex) {
                 ex.printStackTrace();
@@ -117,6 +120,7 @@ public enum SkinAttrType {
             //默认的底色是白色
             //int changeColor = getResourceManager().getColor(resName + "_set_2");
             int changeColor = getResourceManager().getColor(resName + "_set_1");
+            if (sInt ==changeColor) { return;}
             ColorStateList textColors = ((TextView) view).getTextColors();
             String s = textColors.toString();
             int beginIndex = s.indexOf("mStateSpecs=[[");
@@ -166,6 +170,7 @@ public enum SkinAttrType {
         @Override
         public void apply(View view, String resName) {
             int color = getResourceManager().getColor(resName + "_set_2");
+            if (sInt ==color) { return;}
             ColorStateList textColors = ((TextView) view).getTextColors();
             String s = textColors.toString();
             //ColorStateList{mStateSpecs=[[16842913], [-16842913]]mColors=[-16777216, -16524603]mDefaultColor=-16777216}
@@ -203,6 +208,7 @@ public enum SkinAttrType {
             GradientDrawable drawable = (GradientDrawable) view.getBackground();
             if (drawable != null) {
                 int color = getResourceManager().getColor(resName);
+                if (sInt ==color) { return;}
                 drawable.setColor(color);
                 view.setBackground(drawable);
             }
@@ -217,6 +223,7 @@ public enum SkinAttrType {
             GradientDrawable drawable = (GradientDrawable) view.getBackground();
             if (drawable != null) {
                 int color = getResourceManager().getColor(resName);
+                if (sInt ==color) { return;}
                 view.setBackgroundColor(color);
                 drawable.setStroke(1, color);
                 view.setBackground(drawable);
@@ -232,6 +239,7 @@ public enum SkinAttrType {
             GradientDrawable drawable = (GradientDrawable) view.getBackground();
             if (drawable != null) {
                 int color = getResourceManager().getColor(resName);
+                if (sInt ==color) { return;}
                 ((TextView) view).setTextColor(color);
                 drawable.setStroke(1, color);
                 view.setBackground(drawable);
@@ -244,7 +252,9 @@ public enum SkinAttrType {
         @Override
         public void apply(View view, String resName) {
             int color = getResourceManager().getColor(resName + "_str");
+            if (sInt ==color) { return;}
             int color2 = getResourceManager().getColor(resName + "_end");
+            if (sInt ==color2) { return;}
             GradientDrawable drawable = (GradientDrawable) view.getBackground();
             if (drawable != null) {
                 int colors[] = {color, color2};
@@ -263,6 +273,7 @@ public enum SkinAttrType {
             GradientDrawable drawable = (GradientDrawable) view.getBackground();
             if (drawable != null) {
                 int color = getResourceManager().getColor(resName);
+                if (sInt ==color) { return;}
                 view.setBackgroundColor(color);
                 drawable.setStroke(1, color);
                 view.setBackground(drawable);
@@ -278,6 +289,7 @@ public enum SkinAttrType {
             GradientDrawable drawable = (GradientDrawable) view.getBackground();
             if (drawable != null) {
                 int color = getResourceManager().getColor(resName);
+                if (sInt ==color) { return;}
                 ((TextView) view).setTextColor(color);
                 drawable.setStroke(1, color);
                 view.setBackground(drawable);
@@ -285,6 +297,7 @@ public enum SkinAttrType {
         }
     };
 
+    public static int sInt=-1;
     String attrType;
 
     SkinAttrType(String attrType) {

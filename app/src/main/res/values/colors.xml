@@ -5,24 +5,47 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="white">#ffffffff</color>
     <color name="yello">#FFEB3B</color>
-    <color name="balck">#ff000000</color>
+    <color name="balck">#0C0C0C</color>
+    <color name="red">#F60606</color>
 
-    <color name="colorPrimary_red">#A700EE</color>
-    <color name="colorPrimaryDark_red">#B3003F</color>
-    <color name="colorAccent_red">#DA2303</color>
+
+    <color name="colorPrimary_test">#A700EE</color>
+    <color name="colorPrimaryDark_test">#B3003F</color>
+    <color name="colorAccent_test">#DA2303</color>
+    <color name="colorPrimary_str_test">#E42113</color>
+    <color name="colorPrimary_end_test">#09DDF8</color>
+    <color name="colorPrimary_set_1_test">#E42113</color>
+    <color name="colorPrimary_set_2_test">#09DDF8</color>
+    <color name="balck_set_1_test">#E42113</color>
+    <color name="balck_set_2_test">#09DDF8</color>
 
     <color name="colorPrimary_str">#590BE4</color>
     <color name="colorPrimary_end">#FFC107</color>
-    <color name="colorPrimary_str_red">#E42113</color>
-    <color name="colorPrimary_end_red">#09DDF8</color>
 
     <color name="colorPrimary_set_1">#590BE4</color>
     <color name="colorPrimary_set_2">#FFC107</color>
-    <color name="colorPrimary_set_1_red">#E42113</color>
-    <color name="colorPrimary_set_2_red">#09DDF8</color>
 
     <color name="balck_set_1">#590BE4</color>
     <color name="balck_set_2">#FFC107</color>
-    <color name="balck_set_1_red">#E42113</color>
-    <color name="balck_set_2_red">#09DDF8</color>
+
+    <color name="colorPrimary_dark">@color/balck</color>
+    <color name="colorPrimaryDark_dark">@color/balck</color>
+    <color name="colorAccent_dark">@color/balck</color>
+    <color name="colorPrimary_str_dark">@color/balck</color>
+    <color name="colorPrimary_end_dark">@color/balck</color>
+    <color name="balck_set_1_dark">@color/balck</color>
+    <color name="balck_set_2_dark">@color/balck</color>
+    <color name="colorPrimary_set_1_dark">@color/balck</color>
+    <color name="colorPrimary_set_2_dark">@color/balck</color>
+
+    <color name="colorPrimary_red">@color/red</color>
+    <color name="colorPrimaryDark_red">@color/red</color>
+    <color name="colorAccent_red">@color/red</color>
+    <color name="colorPrimary_str_red">@color/red</color>
+    <color name="colorPrimary_end_red">@color/red</color>
+    <color name="balck_set_1_red">@color/red</color>
+    <color name="balck_set_2_red">@color/red</color>
+    <color name="colorPrimary_set_1_red">@color/red</color>
+    <color name="colorPrimary_set_2_red">@color/red</color>
+
 </resources>

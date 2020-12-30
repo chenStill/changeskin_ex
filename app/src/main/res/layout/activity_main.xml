@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+    <LinearLayout
+        android:orientation="horizontal"
+    android:id="@+id/ll_root"
+        android:background="@color/colorPrimary"
+        android:tag="skin:colorPrimary:background_c"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:text="换肤demo"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -33,7 +49,7 @@
                     android:gravity="center"
                     android:tag="skin:colorPrimary:shapeSolidColor"
                     android:text="单换shape的Solidcolor"
-                    android:textColor="#000000" />
+                    android:textColor="#fff" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -78,7 +94,7 @@
                     android:gravity="center"
                     android:tag="skin:colorPrimaryDark:shapeSolidColor"
                     android:text="无框的shape"
-                    android:textColor="#000" />
+                    android:textColor="#fff" />
 
 
             </LinearLayout>
@@ -113,7 +129,7 @@
                     android:gravity="center"
                     android:tag="skin:colorPrimaryDark:shapeSolidColor"
                     android:text="图片更换肤色"
-                    android:textColor="#000000" />
+                    android:textColor="#fff" />
 
 
             </LinearLayout>
@@ -136,7 +152,7 @@
                     android:gravity="center"
                     android:tag="skin:colorPrimary:shapeGradientColor"
                     android:text="带边框的渐变"
-                    android:textColor="#000000" />
+                    android:textColor="#fff" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -187,14 +203,15 @@
 
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:background="@color/colorPrimary"
                 android:gravity="center"
-                android:text="=============选择器选中状态是空心的============="
-                android:textColor="#000000" />
+                android:tag="skin:colorPrimary:background_c"
+                android:text="选择器选中状态是空心的"
+                android:textColor="#fff" />
 
             <LinearLayout
                 android:id="@+id/ll"
@@ -243,14 +260,15 @@
 
             </LinearLayout>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:background="@color/colorPrimary"
                 android:gravity="center"
-                android:text="=============选择器选中状态是实心的============="
-                android:textColor="#000000" />
+                android:tag="skin:colorPrimary:background_c"
+                android:text="选择器选中状态是实心的"
+                android:textColor="#fff" />
             <LinearLayout
                 android:id="@+id/l2"
                 android:layout_width="match_parent"
@@ -300,18 +318,52 @@
 
 
 
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"  >
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
+        android:tag="skin:colorPrimary:background_c"
+        android:onClick="changeskin"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:text="一键换肤"
+        android:textColor="#fff" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:background="@color/colorPrimary"
+        android:tag="skin:colorPrimary:background_c"
+        android:onClick="changeskin_dark"
+        android:padding="10dp"
+        android:text="暗夜模式"
+        android:textColor="#fff" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:background="@color/colorPrimary"
+        android:tag="skin:colorPrimary:background_c"
+        android:onClick="changeskin_red"
+        android:padding="10dp"
+        android:text="中国红"
+        android:textColor="#fff" />
+</LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:background="@color/colorPrimary"
-                android:tag="skin:colorPrimary:background_c"
-                android:onClick="changeskin"
-                android:padding="20dp"
-                android:text="一键换肤"
-                android:textColor="#fff" />
 
         </LinearLayout>
 
