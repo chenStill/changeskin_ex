@@ -132,6 +132,7 @@
                     android:textColor="#fff" />
 
 
+
             </LinearLayout>
 
 
@@ -141,30 +142,45 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/btn_gt_bg_2"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:tag="skin:colorPrimary:shapeGradientColor"
+                    android:text="无框渐变"
+                    android:textColor="#fff" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_gt_bg"
                     android:gravity="center"
-                    android:tag="skin:colorPrimary:shapeGradientColor"
-                    android:text="带边框的渐变"
+                    android:layout_gravity="center"
+                    android:tag="skin:colorPrimary:shapeGradientStrokeColor"
+                    android:text="带框渐变(换框)"
                     android:textColor="#fff" />
-
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/btn_gt_bg_2"
+                    android:background="@drawable/btn_gt_bg"
                     android:gravity="center"
-                    android:tag="skin:colorPrimary:shapeGradientColor"
-                    android:text="无框的渐变"
+                    android:layout_gravity="center"
+                    android:tag="skin:colorPrimary:shapeeGradientColorFONT_S"
+                    android:text="带框渐变(换框和字)"
                     android:textColor="#fff" />
+
+
 
 
             </LinearLayout>

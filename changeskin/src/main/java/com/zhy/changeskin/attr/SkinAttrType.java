@@ -169,7 +169,7 @@ public enum SkinAttrType {
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
-            int color = getResourceManager().getColor(resName + "_set_2");
+            int color = getResourceManager().getColor(resName + "_set_1");
             if (sInt ==color) { return;}
             ColorStateList textColors = ((TextView) view).getTextColors();
             String s = textColors.toString();
@@ -224,7 +224,7 @@ public enum SkinAttrType {
             if (drawable != null) {
                 int color = getResourceManager().getColor(resName);
                 if (sInt ==color) { return;}
-                view.setBackgroundColor(color);
+               // view.setBackgroundColor(color);
                 drawable.setStroke(1, color);
                 view.setBackground(drawable);
             }
@@ -270,11 +270,15 @@ public enum SkinAttrType {
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
+            int color = getResourceManager().getColor(resName + "_str");
+            if (sInt ==color) { return;}
+            int color2 = getResourceManager().getColor(resName + "_end");
+            if (sInt ==color2) { return;}
             GradientDrawable drawable = (GradientDrawable) view.getBackground();
             if (drawable != null) {
-                int color = getResourceManager().getColor(resName);
-                if (sInt ==color) { return;}
-                view.setBackgroundColor(color);
+                int colors[] = {color, color2};
+                //int colors[]={Color.parseColor("#FAD064"),Color.parseColor("#03DAC5")};
+                drawable.setColors(colors);
                 drawable.setStroke(1, color);
                 view.setBackground(drawable);
             }
@@ -286,10 +290,15 @@ public enum SkinAttrType {
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
         @Override
         public void apply(View view, String resName) {
+            int color = getResourceManager().getColor(resName + "_str");
+            if (sInt ==color) { return;}
+            int color2 = getResourceManager().getColor(resName + "_end");
+            if (sInt ==color2) { return;}
             GradientDrawable drawable = (GradientDrawable) view.getBackground();
             if (drawable != null) {
-                int color = getResourceManager().getColor(resName);
-                if (sInt ==color) { return;}
+                int colors[] = {color, color2};
+                //int colors[]={Color.parseColor("#FAD064"),Color.parseColor("#03DAC5")};
+                drawable.setColors(colors);
                 ((TextView) view).setTextColor(color);
                 drawable.setStroke(1, color);
                 view.setBackground(drawable);
